@@ -138,7 +138,7 @@ class _TestWidgetState extends State<TestWidget> {
                         Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Container(
-                            width: 370.0,
+                            width: double.infinity,
                             height: 230.0,
                             child: FlutterFlowLineChart(
                               data: [
@@ -161,9 +161,17 @@ class _TestWidgetState extends State<TestWidget> {
                               chartStylingInfo: ChartStylingInfo(
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).primaryText,
-                                showBorder: false,
+                                showGrid: true,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                borderWidth: 3.0,
                               ),
-                              axisBounds: AxisBounds(),
+                              axisBounds: AxisBounds(
+                                minX: -10.0,
+                                minY: -10.0,
+                                maxX: 10.0,
+                                maxY: 10.0,
+                              ),
                               xAxisLabelInfo: AxisLabelInfo(
                                 reservedSize: 32.0,
                               ),
